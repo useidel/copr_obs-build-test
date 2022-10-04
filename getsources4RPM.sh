@@ -3,8 +3,11 @@
 PATH=/usr/bin:/usr/sbin/
 export PATH
 
+# change to right directory
+cd fedora-rpm
+
 # Get the version from the SPEC file
-MYVER=`grep ^Version fedora-rpm/*.spec |awk '{print $2}'`
+MYVER=`grep ^Version *.spec |awk '{print $2}'`
 
 # Now download the sources 
 wget -nd https://dl.ui.com/unifi/$MYVER/UniFi.unix.zip

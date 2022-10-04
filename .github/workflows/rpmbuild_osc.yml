@@ -47,7 +47,7 @@ jobs:
            mkdir -p "$HOME/.config/osc"
            echo "$API_TOKEN_CONTENT" > "$HOME/.config/osc/oscrc"
 
-      # Submit COPR build by uploading the files to BOS
-      # The path is not the $GITHUB_WORKSPACE it is the RPMBUILD space
-      - name: Submit the OBS build
-        run: osc ls home:useidel
+      # prepare and trigger OBS package build
+      - name:  prepare and trigger OBS package build
+        run: ./submitobsbuild.sh
+
