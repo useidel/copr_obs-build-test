@@ -11,7 +11,6 @@ cd home*
 # clean up
 cd unifictrl 
 osc remove UniFi*.unix.zip
-rm UniFi*.unix.zip
 cd ..
 
 # copy (updated) files to working directory
@@ -22,7 +21,6 @@ cp ../fedora-rpm/UniFi*.unix.zip unifictrl/
 cd unifictrl
 osc add UniFi*.unix.zip
 cd ..
-
 
 # upload changed content
 osc ci -m "Version update" unifictrl
