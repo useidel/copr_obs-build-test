@@ -31,7 +31,7 @@ jobs:
 
       # Install osc tools
       - name: Install tooling for openbuild service
-        run: dnf -y install osc
+        run: dnf -y install osc wget
 
       # Get/download the source files to the right place
       - name: Get the sources for RPM package
