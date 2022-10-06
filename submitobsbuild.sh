@@ -4,26 +4,22 @@ PATH=/usr/bin:/usr/sbin/
 export PATH
 
 # checkout the OSB package
-osc co home:useidel unifictrl
+osc co home:useidel test
 
 cd home*
 
-# clean up
-cd unifictrl 
-osc remove UniFi*.unix.zip
-cd ..
-
 # copy (updated) files to working directory
-cp ../fedora-rpm/*spec unifictrl/
-cp ../fedora-rpm/UniFi*.unix.zip unifictrl/
+# note that the content from github is now in the upper directory
+cp ../*spec test/
+cp ../*.tar.gz test/
 
-# mark files for update (so far only needed for UniFi*.unix.zip)
-cd unifictrl
-osc add UniFi*.unix.zip
+# mark files for update if there are new ones
+cd test
+osc add *spec
 cd ..
 
 # upload changed content
-osc ci -m "Version update" unifictrl
+osc ci -m "Version update" test
 
 
 
