@@ -3,6 +3,8 @@
 PATH=/usr/bin:/usr/sbin/
 export PATH
 
+MYDATE=`date`
+
 # checkout the OSB package
 osc co home:useidel test
 
@@ -14,12 +16,12 @@ cp ../*spec test/
 cp ../*.tar.gz test/
 
 # mark files for update if there are new ones
-cd test
-osc add *spec
-cd ..
+#cd test
+#osc add *spec
+#cd ..
 
 # upload changed content
-osc ci -m "Version update" test
+osc ci -m "Update from $MYDATE" test
 
 
 
